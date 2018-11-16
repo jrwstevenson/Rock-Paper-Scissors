@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Select player -->
+    <div class="display">
+      <p>Play Against:</p>
+      <input type="radio" name="gender" value="computer" checked="checked" />
+      Computer<br />
+      <input type="radio" name="gender" value="opponent" disabled />
+      Opponent<br />
+    </div>
+    <br />
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <p>Make a choice</p>
+      <button id="rock" onclick="newGame(0)">Rock</button>
+      <button id="paper" onclick="newGame(1)">Paper</button>
+      <button id="scissors" onclick="newGame(2)">Scissors</button>
+    </div>
+    <br />
+
+    <!-- Results -->
+    <div class="results">
+      <p>Player Choice: <span id="player1Choice"></span></p>
+      <p>Computer Choice: <span id="player2Choice"></span></p>
+      <p>Result: <span id="winner"></span></p>
+      <p>Games Won: <span id="gamesWon"></span></p>
+      <p>Games Lost: <span id="gamesLost"></span></p>
+    </div>
+
+    <!-- history -->
+    <ul id="history"></ul>
+
+    <script src="index.js"></script>
+  </body>
+</html>
