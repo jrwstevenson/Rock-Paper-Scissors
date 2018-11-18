@@ -1,0 +1,305 @@
+/* Layout */
+
+body {
+  background-color: #151515;
+  color: white;
+  font-family: Star Wars Light;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#header {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #555;
+  margin-bottom: 15px;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Death Star;
+  src: url("./font/Death\ Star.otf") format("opentype");
+}
+@font-face {
+  font-family: Star Wars;
+  src: url("./font/Star\ Wars.woff") format("woff");
+}
+@font-face {
+  font-family: Star Wars Light;
+  src: url("./font/Star\ Wars\ Light.woff") format("woff");
+}
+
+h1 {
+  font-family: Death Star;
+  letter-spacing: 2px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  font-family: Death Star;
+  letter-spacing: 2px;
+}
+
+.buttons img {
+  width: 90px;
+}
+
+.buttons img:hover {
+  border: 2px solid rgba(255, 215, 0, 1);
+}
+
+.rpsBtn {
+  cursor: pointer;
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.buttons img,
+.move img:not(.spinner) {
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+/* Results */
+.resultsDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.result {
+  display: grid;
+  /* flex: 1 1 auto; */
+  width: 50%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  text-align: center;
+  /* background: #282727; */
+  margin: 15px;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "name name name name" "left left right right";
+}
+
+.left {
+  grid-area: left;
+}
+.right {
+  grid-area: right;
+}
+.name {
+  grid-area: name;
+}
+
+.move {
+  /* grid-area: move; */
+}
+
+.level {
+  /* grid-area: level; */
+  margin: 0;
+}
+
+.level p {
+  margin: 0;
+}
+.levelNo {
+  font-family: Death Star;
+  font-size: 20px;
+  margin: 0;
+}
+
+.result h3 {
+  font-family: Star Wars;
+}
+
+h3 #p1Name {
+  cursor: pointer;
+  color: blue;
+}
+
+#vs {
+  margin: auto 0;
+}
+
+.p1 {
+  border-left: 2px solid rgba(0, 255, 0, 0.9);
+  border-right: 2px solid rgba(0, 255, 0, 0.9);
+}
+
+.p2 {
+  border-left: 2px solid rgba(255, 0, 0, 0.9);
+  border-right: 2px solid rgba(255, 0, 0, 0.9);
+}
+
+.move img {
+  width: 45px;
+}
+
+.spinner {
+  animation: spinner 3s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*
+
+
+/* BattleLog */
+.striped {
+  background-image: url("../img/stripes.png");
+  background-size: 10px;
+  background-repeat: repeat-x;
+  background-color: #1a1a1a;
+  background-position: top left;
+}
+
+#BattleLog {
+  margin: 15px;
+  display: flex;
+  /* width: 100%; */
+  height: 200px;
+  overflow: auto;
+  border-radius: 6px;
+  border-left: 2px solid rgba(255, 215, 0, 1);
+  border-right: 2px solid rgba(255, 215, 0, 1);
+}
+
+#BattleLog h2 {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  font-size: 36px;
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+
+.battleItem {
+  list-style: none;
+  width: 100%;
+}
+
+.battleLog-result {
+  font-family: Death Star;
+}
+
+/* Lightsabers */
+
+.lightsaber label {
+  display: block;
+  background: silver;
+
+  width: 50px;
+  height: 10px;
+
+  border-left: 3px solid gray;
+  border-right: 3px solid gray;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.lightsaber .switch {
+  position: relative;
+  top: 0;
+  left: 10px;
+
+  width: 10px;
+  height: 3px;
+
+  background: green;
+}
+
+.lightsaber:hover > .switch {
+  background: red;
+}
+
+.lightsaber input {
+  display: none;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0;
+}
+
+.lightsaber input:checked ~ .plasma {
+  width: 285px;
+}
+
+.lightsaber .plasma {
+  z-index: 0;
+  transition: width 300ms;
+
+  position: relative;
+  bottom: 15px;
+  left: 50px;
+  width: 0px;
+  height: 15px;
+
+  background: white;
+  filter: blur(1px);
+  border-radius: 10px;
+}
+
+.lightsaber--Victory .plasma {
+  background: rgb(135, 220, 90); /* Old browsers */
+  background: linear-gradient(
+    to top,
+    rgba(0, 254, 0, 1) 0%,
+    rgba(254, 254, 254, 1) 30%,
+    rgba(254, 254, 254, 1) 50%,
+    rgba(254, 254, 254, 1) 70%,
+    rgba(0, 254, 0, 1) 100%
+  );
+}
+.lightsaber--Defeat .plasma {
+  background: linear-gradient(
+    to top,
+    rgba(254, 0, 0, 1) 0%,
+    rgba(254, 254, 254, 1) 30%,
+    rgba(254, 254, 254, 1) 50%,
+    rgba(254, 254, 254, 1) 70%,
+    rgba(254, 0, 0, 1) 100%
+  );
+}
+.lightsaber--Draw .plasma {
+  background: linear-gradient(
+    to top,
+    rgba(255, 215, 0, 1) 0%,
+    rgba(254, 254, 254, 1) 30%,
+    rgba(254, 254, 254, 1) 50%,
+    rgba(254, 254, 254, 1) 70%,
+    rgba(255, 215, 0, 1) 100%
+  );
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 215, 0, 1);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}

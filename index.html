@@ -4,41 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>RPS</title>
   </head>
   <body>
-    <!-- Select player -->
-    <div class="display">
-      <p>Play Against:</p>
-      <input type="radio" name="gender" value="computer" checked="checked" />
-      Computer<br />
-      <input type="radio" name="gender" value="opponent" disabled />
-      Opponent<br />
+    <div id="container">
+      <div>
+        <div id="header">
+          <img src="./img/star-wars-logo.png" alt="Star Wars" />
+          <!-- <h1>Play Rock Paper Scissors</h1> -->
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+          <div id="rock" class="rpsBtn" onclick="newGame(0)">
+            <img src="./img/rock.png" alt="submit" />
+            <h3>Rock</h3>
+          </div>
+          <div id="paper" class="rpsBtn" onclick="newGame(1)">
+            <img src="./img/paper.png" alt="submit" />
+            <h3>Paper</h3>
+          </div>
+          <div id="scissors" class="rpsBtn" onclick="newGame(2)">
+            <img src="./img/scissors.png" alt="submit" />
+            <h3>Scissors</h3>
+          </div>
+        </div>
+
+        <!-- Players -->
+
+        <div class="resultsDisplay">
+          <!-- P1 -->
+          <div class="result striped p1" id="p1">
+            <div class="name"><h3 id="p1Name"></h3></div>
+            <div class="level left">
+              <p>Level:</p>
+              <p class="levelNo" id="gamesWon">0</p>
+            </div>
+            <div class="move right">
+              <span id="player1Choice"
+                ><img
+                  class="spinner"
+                  src="/img/resistance-spinner.png"
+                  alt="Move"
+              /></span>
+            </div>
+          </div>
+
+          <h1 id="vs">VS</h1>
+
+          <!-- P2 -->
+          <div class="result striped p2" id="p2">
+            <div class="name"><h3 id="p2Name"></h3></div>
+            <div class="move left">
+              <span id="player2Choice"
+                ><img class="spinner" src="/img/empire-spinner.png" alt="Move"
+              /></span>
+            </div>
+            <div class="level right">
+              <p>Level:</p>
+              <p class="levelNo" id="gamesLost">0</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BattleLog -->
+        <div id="BattleLog" class="striped">
+          <h2>BATTLE LOG</h2>
+          <ul id="BattleList"></ul>
+        </div>
+
+        <!-- Select player -->
+        <div class="display">
+          <p class="inline-block">
+            Play Against:
+            <input
+              class="inline-block"
+              type="radio"
+              name="gender"
+              value="computer"
+              checked="checked"
+            />
+            Computer
+            <input
+              class="inline-block"
+              type="radio"
+              name="gender"
+              value="opponent"
+              disabled
+            />
+            Opponent
+          </p>
+        </div>
+      </div>
     </div>
-    <br />
-
-    <!-- Buttons -->
-    <div class="buttons">
-      <p>Make a choice</p>
-      <button id="rock" onclick="newGame(0)">Rock</button>
-      <button id="paper" onclick="newGame(1)">Paper</button>
-      <button id="scissors" onclick="newGame(2)">Scissors</button>
-    </div>
-    <br />
-
-    <!-- Results -->
-    <div class="results">
-      <p>Player Choice: <span id="player1Choice"></span></p>
-      <p>Computer Choice: <span id="player2Choice"></span></p>
-      <p>Result: <span id="winner"></span></p>
-      <p>Games Won: <span id="gamesWon"></span></p>
-      <p>Games Lost: <span id="gamesLost"></span></p>
-    </div>
-
-    <!-- history -->
-    <ul id="history"></ul>
-
-    <script src="index.js"></script>
+    <script src="./js/helpers.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

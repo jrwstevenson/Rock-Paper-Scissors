@@ -1,8 +1,0 @@
-li:first-child {
-  font-weight: bold;
-}
-
-#history {
-  height: 200px;
-  overflow: auto;
-}

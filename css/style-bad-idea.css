@@ -1,0 +1,113 @@
+/* Variables */
+:root {
+  --green: #2aff00;
+  --red: #ff0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: white;
+  /* background: linear-gradient(180deg, #1cb5e0 50%, #000851 100%); */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+.buttons {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  padding: 5px; /* this */
+}
+
+.rpsBtn {
+  flex: 1 1 auto;
+  text-align: center;
+  margin: 5px; /* and that, will result in a 10px gap */
+}
+
+.resultsDisplay {
+  display: flex;
+  flex-direction: row;
+}
+
+.result {
+  flex: 1 1 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.winner {
+  color: var(--green);
+}
+
+.loser {
+  color: var(--red);
+}
+
+#history {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.Draw {
+  background-image: url("../img/bg-pattern.png");
+  background-repeat: repeat;
+  height: 100vh;
+}
+.Winner {
+  background-image: url("../img/bg-pattern-win.png");
+  background-repeat: repeat;
+  height: 100vh;
+}
+.Loser {
+  background-image: url("../img/bg-pattern-lose.png");
+  background-repeat: repeat;
+  height: 100vh;
+}
+
+#container {
+  background-color: #1c6fe0;
+  width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+  /* border: 2px solid black; */
+}
+
+li:first-child {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#history {
+  height: 200px;
+  overflow: auto;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
