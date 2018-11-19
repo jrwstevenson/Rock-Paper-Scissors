@@ -13,6 +13,7 @@ const gamesWon = document.querySelector("#gamesWon");
 const gamesLost = document.querySelector("#gamesLost");
 // Results
 const BattleList = document.querySelector("#BattleList");
+const feedback = document.querySelector("#feedback");
 // InitialIse counts
 let gamesPlayed = 0;
 
@@ -45,6 +46,8 @@ newGame = move => {
   let result = checkWinner(p1.move.value, p2.move.value);
   gamesPlayed++;
   addToBattleList(p1.move.name, p2.move.name, result);
+  console.log(result);
+  feedback.innerHTML = `${result}`;
 
   // Update Win Counter
   gamesWon.innerHTML = p1.wins;
