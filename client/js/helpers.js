@@ -13,7 +13,15 @@ const slugify = text => {
     .replace(/-+$/, "");
 };
 
-const getFunName = () => {
+uiUpdate = (id, data, method = "innerHTML") => {
+  return this.emit("updateElement", {
+    id,
+    data,
+    method
+  });
+};
+
+getFunName = () => {
   const adjectives = [
     "Adorable",
     "Beautiful",

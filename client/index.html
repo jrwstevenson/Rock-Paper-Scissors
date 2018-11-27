@@ -29,30 +29,37 @@
         <!-- Buttons -->
         <div class="buttons">
           <!-- Rock -->
-          <div id="rock" class="rpsBtn" onclick="newGame(0)">
-            <img src="./img/rock.png" alt="Rock" />
+          <div id="rock" class="rpsBtn disableBtn">
+            <img src="img/rock.png" alt="Rock" />
             <h3>Rock</h3>
           </div>
           <!-- Paper -->
-          <div id="paper" class="rpsBtn" onclick="newGame(1)">
+          <div id="paper" class="rpsBtn disableBtn">
             <img src="./img/paper.png" alt="Paper" />
             <h3>Paper</h3>
           </div>
           <!-- Scissors -->
-          <div id="scissors" class="rpsBtn" onclick="newGame(2)">
+          <div id="scissors" class="rpsBtn disableBtn">
             <img src="./img/scissors.png" alt="Scissors" />
             <h3>Scissors</h3>
           </div>
         </div>
 
-        <h1 id="feedback">Make a Move</h1>
+        <div id="feedback">
+          <button class="pulse" onclick="selectMode('comp')">
+            Play Computer
+          </button>
+          <button class="pulse" onclick="selectMode('remote')">
+            Remote Player
+          </button>
+        </div>
 
         <!-- Players -->
 
         <div class="resultsDisplay">
-          <!-- P1 -->
-          <div class="result striped p1" id="p1">
-            <div class="name"><h3 id="p1Name"></h3></div>
+          <!-- player -->
+          <div class="result striped player" id="player">
+            <div class="name"><h3 id="playerName"></h3></div>
             <div class="level left">
               <p>Wins:</p>
               <p class="levelNo" id="gamesWon">0</p>
@@ -61,7 +68,7 @@
               <span id="player1Choice"
                 ><img
                   class="spinner"
-                  src="/img/resistance-spinner.png"
+                  src="./img/resistance-spinner.png"
                   alt="Move"
               /></span>
             </div>
@@ -69,12 +76,12 @@
 
           <h1 id="vs">VS</h1>
 
-          <!-- P2 -->
-          <div class="result striped p2" id="p2">
-            <div class="name"><h3 id="p2Name"></h3></div>
+          <!-- oppo -->
+          <div class="result striped oppo" id="oppo">
+            <div class="name"><h3 id="oppoName"></h3></div>
             <div class="move left">
               <span id="player2Choice"
-                ><img class="spinner" src="/img/empire-spinner.png" alt="Move"
+                ><img class="spinner" src="./img/empire-spinner.png" alt="Move"
               /></span>
             </div>
             <div class="level right">
@@ -91,7 +98,13 @@
         </div>
       </div>
     </div>
-    <script src="./js/helpers.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="./js/helpers.js"></script> -->
     <script src="./js/index.js"></script>
+    <script>
+      const consoleThis = text => {
+        console.log(text);
+      };
+    </script>
   </body>
 </html>
